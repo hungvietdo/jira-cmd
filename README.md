@@ -7,7 +7,7 @@ I made an update for the package to use cli-table2. To install jira-cmd, use bel
     
 A sample command to add worklog
 
-    jira worklogadd --startedAt "2017/12/07 9:15 AM" CDC-4 15m
+    jira worklogadd --startedAt "2017/12/07 9:15 AM" CDC-4 15m "Standup Meeting"
 
 jira-cmd
 ========
