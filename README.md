@@ -4,6 +4,9 @@ Update (2017/12/07)
 I made an update to use cli-table2. To install jira-cmd, use below command.
 
     [sudo] npm install -g https://github.com/hungvietdo/jira-cmd.git
+    
+A sample command to add worklog
+    jira worklogadd --startedAt "2017/12/07 9:15 AM" CDC-4 15m
 
 jira-cmd
 ========
