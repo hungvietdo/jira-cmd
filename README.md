@@ -1,7 +1,7 @@
 
 Update (2017/12/07)
 ========
-I made an update to use cli-table2. To install jira-cmd, use below command.
+I made an update for the package to use cli-table2. To install jira-cmd, use below command.
 
     [sudo] npm install -g https://github.com/hungvietdo/jira-cmd.git
     
