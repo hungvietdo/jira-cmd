@@ -1,5 +1,5 @@
 
-update
+Update (2017/12/07)
 ========
 I made an update to use cli-table2. To install jira-cmd. Use below command.
 
