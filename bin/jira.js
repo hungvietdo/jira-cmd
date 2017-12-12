@@ -11,6 +11,7 @@ requirejs([
   '../lib/config',
   '../lib/auth',
   '../lib/jira/ls',
+  '../lib/jira/tokeninfo',
   '../lib/jira/describe',
   '../lib/jira/assign',
   '../lib/jira/comment',
@@ -20,7 +21,7 @@ requirejs([
   '../lib/jira/worklog',
   '../lib/jira/link',
   '../lib/jira/watch',
-], function (program, config, auth, ls, describe, assign, comment, create, sprint, transitions, worklog, link, watch) {
+], function (program, config, auth, ls, tokeninfo, describe, assign, comment, create, sprint, transitions, worklog, link, watch) {
 
      function finalCb(){
        process.exit(1);
@@ -42,6 +43,28 @@ requirejs([
           } else {
             ls.showAll(options.type);
           }
+        }
+      });
+    });
+
+  program
+    .command('tokeninfo')
+    .description('List the current token info')
+    .action(function (options) {
+      auth.setConfig(function (auth) {
+        if (auth) {
+          tokeninfo.getinfo();
+        }
+      });
+    });
+
+  program
+    .command('moveToStatus <issue> <statusName> (e.g.: "Ready for QA")')
+    .description('Moved the issue.')
+    .action(function (issue, statusName) {
+      auth.setConfig(function (auth) {
+        if (auth) {
+          transitions.moveToStatus(issue, statusName);
         }
       });
     });
