@@ -5,9 +5,17 @@ I made an update for the package to use cli-table2. To install jira-cmd, use bel
 
     [sudo] npm install -g https://github.com/hungvietdo/jira-cmd.git
     
-A sample command to add worklog
+A sample command to add worklog:
 
     jira worklogadd --startedAt "2017/12/07 9:15 AM" CDC-4 15m "Standup Meeting"
+
+Or, see your worklog in the last 3 days:
+
+    `jira jql 'issueFunction in workLogged("after -3d by hung.do")'`
+
+Or, see the command structure:
+
+`jira config --help`
 
 jira-cmd
 ========
